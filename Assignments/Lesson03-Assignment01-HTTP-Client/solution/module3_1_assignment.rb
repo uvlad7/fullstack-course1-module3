@@ -3,12 +3,11 @@ require 'httparty'
 class Recipe
   include HTTParty
 
-  base_uri "http://food2fork.com/api"
-  default_params key: ENV["FOOD2FORK_KEY"]
+  base_uri "http://www.recipepuppy.com/api"
+  default_params onlyImages: 1
   format :json
 
   def self.for (keyword)
-    get("/search", query: {q: keyword})["recipes"]
+    get("", query: {q: keyword})["results"]
   end
 end
-
