@@ -7,8 +7,8 @@ describe Recipe do
   subject { Recipe }
 
   it { is_expected.to respond_to(:for) } 
-  its(:default_params) { is_expected.to include onlyImages: 1 }
-  its(:base_uri) { is_expected.to include "http://www.recipepuppy.com/api" }
+  its(:default_params) { is_expected.to include to: '10' }
+  its(:base_uri) { is_expected.to include "https://edamam-recipe-search.p.rapidapi.com/search" }
 
   context "Chocolate Search" do
     before :each do
