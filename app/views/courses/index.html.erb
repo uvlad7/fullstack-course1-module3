@@ -1,4 +1,7 @@
-<h1>Searching for - <%= @search_term %></h1>
+<form action ="/" id = "looking_for_form"/>
+<h1>Searching for - <input type="text" id="looking_for" name="looking_for" for="looking_for_form" value="<%= @search_term %>"></h1>
+
+<% if @courses.present? %>
 
 <table border="1">
   <tr>
@@ -8,9 +11,15 @@
   </tr>
   <% @courses.each do |course| %>
     <tr class=<%= cycle('even', 'odd') %>>
-      <td><%= image_tag(course["smallIcon"])%></td>
+      <td class='icon'><%= image_tag("#{course["photoUrl"]}?auto=format%2Ccompress&dpr=1&w=100&h=100&fit=fill&bg=FFF&q=25")%></td>
       <td><%= course["name"] %></td>
-      <td><%= course["shortDescription"] %></td>
+      <td><%= course["description"] %></td>
     </tr>
   <% end %>
 </table>
+
+<% else %>
+
+<p>There were no search results for "<%= @search_term %>"</p>
+
+<% end %>

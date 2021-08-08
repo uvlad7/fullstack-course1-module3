@@ -14,3 +14,20 @@ td {
   background-color: #D6E1C3;
 }
 
+.icon {
+  text-align: center;
+}
+
+.icon > img {
+  border: 1px blue solid;
+  border-radius: 7px;
+  width: 100px;
+}
+
+h1 > input {
+  border: none;
+  background: #e2e2e2;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: serif;
+}
